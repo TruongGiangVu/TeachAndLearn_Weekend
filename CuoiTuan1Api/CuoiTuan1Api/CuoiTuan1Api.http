@@ -1,0 +1,6 @@
+@CuoiTuan1Api_HostAddress = http://localhost:5282
+
+GET {{CuoiTuan1Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
