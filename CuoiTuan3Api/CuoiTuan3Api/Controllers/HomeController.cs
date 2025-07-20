@@ -16,10 +16,11 @@ namespace CuoiTuan3Api.Controllers
     public class HomeController : ControllerBase
     {
         private readonly Serilog.ILogger _log = Log.ForContext<HomeController>();
-        private readonly DatabaseConnect _database;
-        private readonly ToDoService _service;
+        private readonly IDatabaseConnect _database;
+        private readonly IToDoService _service;
         private readonly ILogger<HomeController> _logger;
-        public HomeController(DatabaseConnect database, ToDoService service, ILogger<HomeController> logger)
+        public HomeController(IDatabaseConnect database, IToDoService service, 
+                ILogger<HomeController> logger)
         {
             _database = database;
             _service = service;

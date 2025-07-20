@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuoiTuan3Api", "CuoiTuan3Api\CuoiTuan3Api.csproj", "{B2716E72-5FBE-46A8-B6DA-E1275F8F731C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuoiTuan3Api.Tests", "CuoiTuan3Api.Tests\CuoiTuan3Api.Tests.csproj", "{18C332FA-3DF4-4606-8308-95282848AD49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B2716E72-5FBE-46A8-B6DA-E1275F8F731C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2716E72-5FBE-46A8-B6DA-E1275F8F731C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2716E72-5FBE-46A8-B6DA-E1275F8F731C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C332FA-3DF4-4606-8308-95282848AD49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C332FA-3DF4-4606-8308-95282848AD49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C332FA-3DF4-4606-8308-95282848AD49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C332FA-3DF4-4606-8308-95282848AD49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

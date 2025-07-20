@@ -9,7 +9,7 @@ using System.Globalization;
 namespace CuoiTuan3Api.OracleDb
 {
     // Dependency injection DI 
-    public class DatabaseConnect // service database 
+    public class DatabaseConnect : IDatabaseConnect // service database 
     {
         public string connectionString = string.Empty;
         public DatabaseConnect(IConfiguration configuration)

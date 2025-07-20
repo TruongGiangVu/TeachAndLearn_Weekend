@@ -36,6 +36,7 @@ Log.Logger = new LoggerConfiguration()
             .WriteTo.Console() // ghi log vào console luôn
             .CreateLogger();
 
+builder.Services.AddSerilog(); // đoạn này để add service thì phải
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -43,8 +44,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<DatabaseConnect>();
-builder.Services.AddScoped<ToDoService>();
+builder.Services.AddScoped<IDatabaseConnect, DatabaseConnect>();
+builder.Services.AddScoped<IToDoService, ToDoService>();
 
 builder.Host.UseSerilog(); // add vào log hệ thống
 

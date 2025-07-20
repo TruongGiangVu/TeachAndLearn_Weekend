@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Components.Forms;
 
 namespace CuoiTuan3Api.Services
 {
-    public class ToDoService
+    public class ToDoService : IToDoService
     {
-        private readonly DatabaseConnect _database;
+        private readonly IDatabaseConnect _database;
 
-        public ToDoService(DatabaseConnect database)
+        public ToDoService(IDatabaseConnect database)
         {
             _database = database;
         }
