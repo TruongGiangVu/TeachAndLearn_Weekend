@@ -1,12 +1,6 @@
-using CuoiTuan3Api.Models;
 using CuoiTuan3Api.OracleDb;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace CuoiTuan3Api.Tests.OracleDb
 {
@@ -35,9 +29,7 @@ namespace CuoiTuan3Api.Tests.OracleDb
 
             // Assert
             Assert.NotNull(toDo);
-            Assert.Equal(id, toDo.Id);
-            
-            
+            Assert.Equal(id, toDo.Id); 
         }
     }
 }

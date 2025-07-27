@@ -2,6 +2,7 @@
 using CuoiTuan3Api.Services;
 using Serilog;
 using System.Globalization;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,7 +40,12 @@ Log.Logger = new LoggerConfiguration()
 builder.Services.AddSerilog(); // đoạn này để add service thì phải
 // Add services to the container.
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

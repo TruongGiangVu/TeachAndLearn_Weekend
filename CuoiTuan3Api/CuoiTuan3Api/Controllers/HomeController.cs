@@ -29,6 +29,13 @@ namespace CuoiTuan3Api.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            Parent<ChildA> parentA = new Parent<ChildA>();
+            parentA.Data = new ChildA();
+
+            Parent<ChildB> parentB = new Parent<ChildB>();
+            parentB.Data = new ChildB();
+
+
             _log.Information("Log bằng readonly");
             _logger.LogInformation("Log bằng dependency inject");
             Log.Information("Log bằng static");
