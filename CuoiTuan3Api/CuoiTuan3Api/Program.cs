@@ -4,6 +4,7 @@ using Serilog;
 using System.Globalization;
 using System.Text.Json.Serialization;
 
+DotNetEnv.Env.Load();
 var builder = WebApplication.CreateBuilder(args);
 
 // * Config ISO8601 CultureInfo, với format dd-MM-yyyy HH:mm:ss mặc định

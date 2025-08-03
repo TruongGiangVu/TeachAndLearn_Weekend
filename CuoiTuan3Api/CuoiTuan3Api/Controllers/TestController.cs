@@ -9,6 +9,12 @@ namespace CuoiTuan3Api.Controllers
     [Route("[controller]")]
     public class TestController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+
+        public TestController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         [HttpPost]
         public IActionResult Index([FromBody] MyClass input)
         {
@@ -24,6 +30,14 @@ namespace CuoiTuan3Api.Controllers
             Console.WriteLine(JsonSerializer.Serialize(input, options));
 
             return Ok(input);
+        }
+
+        [HttpGet("test2")]
+        public IActionResult Index2()
+        {
+            string a = Environment.GetEnvironmentVariable("GIANG_VAR_1") ?? string.Empty;
+            string b = _configuration.GetValue<string>("AppSettings:ConnectionString") ?? string.Empty;
+            return Ok(new {a, b});
         }
     }
 }
