@@ -16,11 +16,25 @@ public class HomeController : ControllerBase
     [HttpGet]
     public IActionResult Get([FromQuery] string? search = null, [FromQuery] string? name = null)
     {
+        Console.WriteLine("serach: " + search);
         MyClass res = new MyClass
         {
             Id = 1,
             Name = "Test " + search,
             Summary = "",
+            Status = "Done"
+        };
+        return Ok(res);
+    }
+
+    [HttpPost]
+    public IActionResult Post([FromBody] MyClass input)
+    {
+        MyClass res = new MyClass
+        {
+            Id = input.Id +1,
+            Name = "Test " + input.Name,
+            Summary = input.Summary,
             Status = "Done"
         };
         return Ok(res);

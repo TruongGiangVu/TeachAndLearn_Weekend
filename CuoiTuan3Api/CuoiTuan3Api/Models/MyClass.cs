@@ -2,8 +2,13 @@
 {
     public class MyClass
     {
-        public int Id { get; set; }
+        public int Id { get; set; } // Pascal Name
         public string Name { get; set; } = string.Empty;
+
+        // Name -> name
+        // FamilyName -> familyName
+        // SmsName -> smsName SmsNameAAAA -> smsNameAAAA
+        public string FamilyName { get; set; } = string.Empty;
         public Status Status { get; set; }
     }
 

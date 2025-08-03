@@ -1,10 +1,11 @@
-﻿using CuoiTuan3Api.OracleDb;
+﻿using CuoiTuan3Api.Constants;
+using CuoiTuan3Api.OracleDb;
 using CuoiTuan3Api.Services;
 using Serilog;
 using System.Globalization;
 using System.Text.Json.Serialization;
 
-DotNetEnv.Env.Load();
+DotNetEnv.Env.Load(); // đọc từ file .env và ghi đè vào file appsettings.json
 var builder = WebApplication.CreateBuilder(args);
 
 // * Config ISO8601 CultureInfo, với format dd-MM-yyyy HH:mm:ss mặc định
@@ -50,6 +51,25 @@ builder.Services.AddControllers()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// service HttpClient name Party1Api và BaseAddress: http://localhost:5271
+builder.Services.AddHttpClient(
+    AppConstant.Party1Api, // đặt tên nó
+    client =>
+    {
+        // Set the base address of the named client.
+        client.BaseAddress = new Uri("http://localhost:5271");
+
+    });
+
+builder.Services.AddHttpClient(
+    "Api2", // đặt tên nó
+    client =>
+    {
+        // Set the base address of the named client.
+        client.BaseAddress = new Uri("http://localhost:5271");
+
+    });
 
 builder.Services.AddScoped<IDatabaseConnect, DatabaseConnect>();
 builder.Services.AddScoped<IToDoService, ToDoService>();

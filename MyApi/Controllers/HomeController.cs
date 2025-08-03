@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ public class HomeController : ControllerBase
     [HttpGet(Name = "GetHome")]
     public async Task<IActionResult> Get([FromQuery] string? search = null)
     {
+        Console.WriteLine("serach: " + search);
         // taoj http client
         using HttpClient client = new HttpClient();
 

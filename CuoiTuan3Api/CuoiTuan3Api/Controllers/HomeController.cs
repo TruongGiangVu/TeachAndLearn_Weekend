@@ -27,7 +27,7 @@ namespace CuoiTuan3Api.Controllers
             _logger = logger;
         }
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult IndexHome()
         {
             Parent<ChildA> parentA = new Parent<ChildA>();
             parentA.Data = new ChildA();
